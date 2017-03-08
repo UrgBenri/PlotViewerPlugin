@@ -165,7 +165,6 @@ void PlotSettingsWidget::setupColors()
 
 PlotSettingsWidget::~PlotSettingsWidget()
 {
-    qDebug() << "PlotSettingsWidget::~PlotSettingsWidget";
     delete ui;
 }
 

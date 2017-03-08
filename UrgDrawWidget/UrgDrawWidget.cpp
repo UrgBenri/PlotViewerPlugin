@@ -114,7 +114,6 @@ bool UrgDrawWidget::event(QEvent *event)
 {
     switch(event->type()){
     case QEvent::TouchBegin:{
-        qDebug() << "QEvent::TouchBegin";
         QTouchEvent *touchEvent = (QTouchEvent*)event;
         if(touchEvent && touchEvent->touchPoints().size() > 0){
             if(touchEvent->touchPoints().size() == 1){
@@ -135,7 +134,6 @@ bool UrgDrawWidget::event(QEvent *event)
 
     }break;
     case QEvent::TouchUpdate:{
-        qDebug() << "QEvent::TouchUpdate";
         QTouchEvent *touchEvent = (QTouchEvent*)event;
         if(touchEvent && touchEvent->touchPoints().size() == 1){
             interactionUpdate(touchEvent->touchPoints()[0].pos());
@@ -144,7 +142,6 @@ bool UrgDrawWidget::event(QEvent *event)
             return true;
         }else{
             QList<QTouchEvent::TouchPoint> touchPoints = touchEvent->touchPoints();
-            qDebug() << "touchPoints " << touchPoints.size();
             if (touchPoints.count() == 2) {
                 // determine scale factor
                 const QTouchEvent::TouchPoint &touchPoint0 = touchPoints.first();
@@ -158,7 +155,6 @@ bool UrgDrawWidget::event(QEvent *event)
 
     }break;
     case QEvent::TouchEnd:{
-        qDebug() << "QEvent::TouchEnd";
         QTouchEvent *touchEvent = (QTouchEvent*)event;
         if(touchEvent && touchEvent->touchPoints().size() > 0){
             if(touchEvent->touchPoints().size() == 1){
@@ -185,7 +181,6 @@ bool UrgDrawWidget::event(QEvent *event)
 
 UrgDrawWidget::~UrgDrawWidget(void)
 {
-    qDebug() << "UrgDrawWidget::~UrgDrawWidget";
 }
 
 void UrgDrawWidget::clear(void)
@@ -534,7 +529,6 @@ void UrgDrawWidget::paintGL(void)
 
 void UrgDrawWidget::mousePressEvent(QMouseEvent* event)
 {
-    //    qDebug() << "UrgDrawWidget::mousePressEvent";
     if(event->button() == Qt::LeftButton){
         interactionBegin(event->pos());
         event->accept();
@@ -550,7 +544,6 @@ void UrgDrawWidget::mousePressEvent(QMouseEvent* event)
 
 void UrgDrawWidget::mouseMoveEvent(QMouseEvent* event)
 {
-    //    qDebug() << "UrgDrawWidget::mouseMoveEvent";
     if(m_mouseButton == Qt::LeftButton){
         interactionUpdate(event->pos());
         event->accept();
@@ -565,7 +558,6 @@ void UrgDrawWidget::mouseMoveEvent(QMouseEvent* event)
 
 void UrgDrawWidget::mouseReleaseEvent(QMouseEvent* event)
 {
-    //    qDebug() << "UrgDrawWidget::mouseReleaseEvent";
     if(m_mouseButton == Qt::LeftButton){
         interactionEnd(event->pos());
         event->accept();
@@ -651,7 +643,6 @@ void UrgDrawWidget::interactionEnd(const QPointF &position)
 
 void UrgDrawWidget::measurementBegin(const QPointF &position)
 {
-    qDebug() << "UrgDrawWidget::measurementBegin";
     m_now_pressed = true;
     m_now_moving = false;
     m_clicked_position = position;

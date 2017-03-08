@@ -81,7 +81,6 @@ void PlotViewerPlugin::reszeValuesTable()
 
 PlotViewerPlugin::~PlotViewerPlugin()
 {
-    //    qDebug() << "PlotWidget::~PlotWidget";
     if(m_settings) delete m_settings;
     delete ui;
 }

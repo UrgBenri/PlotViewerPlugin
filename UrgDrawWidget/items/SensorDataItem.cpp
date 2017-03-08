@@ -125,7 +125,6 @@ void SensorDataItem::drawPolygon(int echo
                                  , const QPointF &offset
                                  , qreal alpha
                                  , int selectedStep){
-    qDebug() << "SensorDataItem::drawPolygon";
 
     if(colors.size() == 0) return;
 

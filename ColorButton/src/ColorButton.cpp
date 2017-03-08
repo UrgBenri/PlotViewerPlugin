@@ -47,7 +47,6 @@ ColorButton::ColorButton(const QString &text, QWidget* parent) :
 
 ColorButton::~ColorButton()
 {
-    qDebug() << "ColorButton::~ColorButton";
 }
 
 QColor
