@@ -139,6 +139,9 @@
           <height>20</height>
          </size>
         </property>
+        <property name="autoRepeat">
+         <bool>true</bool>
+        </property>
         <property name="autoRaise">
          <bool>true</bool>
         </property>
@@ -167,6 +170,9 @@
           <width>20</width>
           <height>20</height>
          </size>
+        </property>
+        <property name="autoRepeat">
+         <bool>true</bool>
         </property>
         <property name="autoRaise">
          <bool>true</bool>
