@@ -124,7 +124,7 @@ void PlotViewerPlugin::addMeasurementData(const QString &id, const PluginDataStr
 
 void PlotViewerPlugin::setReceptionRate(int rate)
 {
-    ui->orthoDrawWidget->setUpperRightMessage(tr("Reception rate: %1ms").arg(rate));
+    ui->orthoDrawWidget->setUpperRightMessage(tr("%1ms").arg(rate, 3, 10, QChar(' ')));
 }
 
 void PlotViewerPlugin::setRotationOffset(int rotation)
