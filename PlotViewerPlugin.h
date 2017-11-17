@@ -125,7 +125,8 @@ signals:
 
 public slots:
     void addMeasurementData(const QString &id
-                            , const PluginDataStructure &data);
+                            , const PluginDataStructure &data) Q_DECL_OVERRIDE;
+    void setReceptionRate(int rate) Q_DECL_OVERRIDE;
     void clear();
     void refresh();
     void setSelectedStep(int step);

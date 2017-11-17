@@ -122,6 +122,11 @@ void PlotViewerPlugin::addMeasurementData(const QString &id, const PluginDataStr
     }
 }
 
+void PlotViewerPlugin::setReceptionRate(int rate)
+{
+    ui->orthoDrawWidget->setUpperRightMessage(tr("Reception rate: %1ms").arg(rate));
+}
+
 void PlotViewerPlugin::setRotationOffset(int rotation)
 {
     ui->orthoDrawWidget->setRotationOffset(rotation);
@@ -152,7 +157,7 @@ void PlotViewerPlugin::orthoMouseClicked(bool state, long x, long y, int step)
 void PlotViewerPlugin::refresh()
 {
     ui->orthoDrawWidget->addMeasurementData(localData);
-    ui->orthoDrawWidget->setUpdateRate(tr("Refresh rate: ") + QString::number(1000 / refreshTimerAvg.average()) + " fps");
+    ui->orthoDrawWidget->setLowerRightMessage(tr("Refresh rate: ") + QString::number(1000 / refreshTimerAvg.average()) + " fps");
     updateValuesTable(selectedStep);
 }
 
